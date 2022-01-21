@@ -1,6 +1,6 @@
-# This is a sample Window Web server and client
+## This is a sample Window Web server and client
 
-# Goals:
+## Goals:
 * Serve a legit static site(html,css, js)
 * Serve webgl
 * Accept and handle multiple connections

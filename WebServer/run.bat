@@ -2,13 +2,20 @@
 
 setlocal enabledelayedexpansion
 
-set "IP_ADDRESS=%~1"
+set "PARAM1=%~1"
 
-if "!IP_ADDRESS!" equ "" (set IP_ADDRESS=184.25.233.135)
+if "!PARAM1!" equ "kill" (goto KILL) else (goto RUN)
 
+
+:RUN
 pushd build
-
-del site.html
-main.exe %IP_ADDRESS% > site.html
-
+del dashboard.html
+main.exe %IP_ADDRESS% > dashboard.html
 popd
+goto eof
+
+:KILL
+taskkill /F /im main.exe
+goto eof
+
+:eof
